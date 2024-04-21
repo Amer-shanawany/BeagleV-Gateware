@@ -94,7 +94,7 @@
 	vio_enable {
 		gpio-hog;
 		gpios = <30 30>;
-		output_high;
+		output-high;
 		line-name = "VIO_ENABLE";
 	};
 
