@@ -36,6 +36,7 @@ import sys
 import gateware_scripts
 from gateware_scripts.build_gateware import build_gateware
 
+
 global yaml_input_file
 
 
@@ -68,10 +69,7 @@ def main():
 
     parse_arguments()
 
-    build_dir = os.getcwd()
-    gateware_top_dir = build_dir
-
-    build_gateware(yaml_input_file, build_dir, gateware_top_dir)
+    build_gateware(yaml_input_file, ".", ".")
 
 
 if __name__ == '__main__':
