@@ -3,6 +3,7 @@ import struct
 import ctypes
 import sys
 import subprocess
+import platform
 
 from gateware_scripts.gather_dtso import gather_dtso
 
@@ -119,6 +120,16 @@ def inject_git_info_into_src_dtso(dtso_file, git_version):
             fout.write(dtso)
 
 
+def execute_dtc_cmd(dtc_cmd):
+    os_platform = platform.system()
+    if os_platform == "Windows":
+        wsl_cmd = "wsl -e " + dtc_cmd
+        wsl_cmd = wsl_cmd.replace("\\", "/")
+        os.system(wsl_cmd)
+    else:
+        os.system(dtc_cmd)
+
+
 def compile_dtso(work_dir):
     root_dir = os.path.join(work_dir, 'dtbo', 'context-0')
     git_version = get_gateware_git_version(work_dir)
@@ -129,14 +140,14 @@ def compile_dtso(work_dir):
                 inject_git_info_into_src_dtso(dtso_file, git_version)
                 dtbo_file = os.path.splitext(dtso_file)[0] + '.dtbo'
                 cmd = 'dtc -O dtb -I dts -o ' + dtbo_file + ' ' + dtso_file
-                os.system(cmd)
+                execute_dtc_cmd(cmd)
 
 
 def generate_device_tree_overlays(fpga_design_src_path, overlay_dir_path, build_options_list):
     print("================================================================================")
     print("                            Generate Device Tree Overlays")
     print("================================================================================\r\n", flush=True)
-    bitstream_builder_root = os.getcwd()
+    bitstream_builder_root = "."
     work_dir = os.path.join(bitstream_builder_root, 'work')
     gather_dtso(fpga_design_src_path, work_dir, build_options_list)
     compile_dtso(work_dir)

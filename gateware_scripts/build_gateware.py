@@ -174,6 +174,32 @@ def check_tool_status():
             print("Error: dtc (device-tree-compiler) not found in path")
             exit()
 
+    if platform.system() == "Windows":
+        print("Running on Windows host")
+        wsl_distributions_resp = subprocess.run(['wsl', '-l'], stdout=subprocess.PIPE)
+        wsl_distributions = wsl_distributions_resp.stdout.decode('utf-16')
+        if "Windows Subsystem for Linux" not in wsl_distributions:
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            print("!!! Windows Subsystem for Linux not found !!!")
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+            print("You need WSL to run the Linux device tree compiler on a Windows host to ")
+            print("generate device tree overlays describing the complete gateware.")
+            print("Without this, Linux will be unaware of the gateware's FPGA content.")
+            input("Press Enter to continue generating gateware without device tree overlays: ")
+        else:
+            print("Windows Subsystem for Linux installed")
+            resp = subprocess.run(['wsl', '-e', 'dtc', '-v'], stdout=subprocess.PIPE)
+            dtc_version = resp.stdout.decode('ascii')
+            if "Version: DTC" not in dtc_version:
+                print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                print("!!! Device tree compiler not found !!!")
+                print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+                print("Please install the Linux device tree compiler in Windows Subsystem for Linux.")
+                print("In WSL, use command: sudo apt install device-tree-compiler")
+                input("Press Enter to continue generating gateware without device tree overlays: ")
+            else:
+                print("Found device tree compiler: ", dtc_version)
+
 
 # Creates required folders and removes artifacts before beginning
 def init_workspace():
