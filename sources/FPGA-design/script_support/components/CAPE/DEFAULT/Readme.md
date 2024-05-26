@@ -72,10 +72,10 @@
 | P9_15  | core_gpio[4] @ 0x41200000  |  146  | GPIO        |
 | P9_16  | core_pwm[1] @ 0x41400000   |  n/a  | PWM_1:1     |
 | P9_17  | MSS SPI0                   |   54  | SPI0 CS     |
-| P9_18  | MSS SPI0                   |   54  | SPI0 DI     |
+| P9_18  | MSS SPI0                   |   54  | SPI0 MOSI   |
 | P9_19  | MSS I2C0                   |   58  | I2C0 SCL    |
 | P9_20  | MSS I2C0                   |   58  | I2C0 SDA    |
-| P9_21  | MSS SPI0                   |   54  | SPI0 DO     |
+| P9_21  | MSS SPI0                   |   54  | SPI0 MISO   |
 | P9_22  | MSS SPI0                   |   54  | SPI0 SCLK   |
 | P9_23  | core_gpio[10] @ 0x41200000 |  152  | GPIO        |
 | P9_24  | MMUART2                    |   92  | UART1 TX    |
@@ -83,7 +83,7 @@
 | P9_26  | MMUART2                    |   92  | UART2 RX    |
 | P9_27  | core_gpio[14] @ 0x41200000 |  156  | GPIO        |
 | P9_28  | MSS SPI1                   |   55  | SPI1 CS     |
-| P9_29  | MSS SPI1                   |   55  | SPI1 DO     |
+| P9_29  | MSS SPI1                   |   55  | SPI1 MISO   |
 | P9_30  | core_gpio[17] @ 0x41200000 |  159  | GPIO        |
 | P9_31  | MSS SPI1                   |   55  | SPI1 SCLK   |
 | P9_32  | n/a                        |  n/a  | VDD ADC     |
