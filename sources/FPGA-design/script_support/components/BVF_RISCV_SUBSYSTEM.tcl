@@ -66,6 +66,14 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {USER_BUTTON} -port_directi
 sd_create_scalar_port -sd_name ${sd_name} -port_name {SD_CARD_CS} -port_direction {OUT} 
 sd_create_scalar_port -sd_name ${sd_name} -port_name {SD_DET} -port_direction {IN} 
 
+
+sd_create_scalar_port -sd_name ${sd_name} -port_name {CAN_0_TXBUS} -port_direction {OUT} 
+sd_create_scalar_port -sd_name ${sd_name} -port_name {CAN_0_TX_EBL} -port_direction {OUT} 
+sd_create_scalar_port -sd_name ${sd_name} -port_name {CAN_0_RXBUS} -port_direction {IN} 
+sd_create_scalar_port -sd_name ${sd_name} -port_name {CAN_1_TXBUS} -port_direction {OUT} 
+sd_create_scalar_port -sd_name ${sd_name} -port_name {CAN_1_TX_EBL} -port_direction {OUT} 
+sd_create_scalar_port -sd_name ${sd_name} -port_name {CAN_1_RXBUS} -port_direction {IN} 
+
 sd_create_bus_port -sd_name ${sd_name} -port_name {GPIO_2_M2F} -port_direction {OUT} -port_range {[27:0]}
 sd_create_bus_port -sd_name ${sd_name} -port_name {GPIO_2_OE_M2F} -port_direction {OUT} -port_range {[27:0]} 
 sd_create_bus_port -sd_name ${sd_name} -port_name {GPIO_2_F2M} -port_direction {IN} -port_range {[27:0]} 
@@ -582,6 +590,18 @@ sd_rename_port -sd_name ${sd_name} -current_port_name {APBmslave1} -new_port_nam
 sd_rename_port -sd_name ${sd_name} -current_port_name {APBmslave2} -new_port_name {CSI_APB_MTARGET} 
 sd_rename_port -sd_name ${sd_name} -current_port_name {APBmslave4} -new_port_name {HSI_APB_MTARGET} 
 sd_rename_port -sd_name ${sd_name} -current_port_name {APBmslave16} -new_port_name {M2_APB_MTARGET} 
+
+#-------------------------------------------------------------------------------
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAN_0_TXBUS" "PF_SOC_MSS:CAN_0_TXBUS_M2F"} 
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAN_0_TX_EBL" "PF_SOC_MSS:CAN_0_TX_EBL_M2F"} 
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAN_0_RXBUS" "PF_SOC_MSS:CAN_0_RXBUS_F2M"} 
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAN_1_TXBUS" "PF_SOC_MSS:CAN_1_TXBUS_M2F"} 
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAN_1_TX_EBL" "PF_SOC_MSS:CAN_1_TX_EBL_M2F"} 
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CAN_1_RXBUS" "PF_SOC_MSS:CAN_1_RXBUS_F2M"} 
+
+
+
+
 
 #-------------------------------------------------------------------------------
 # Additional cape peripherals WIP.
