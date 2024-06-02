@@ -6,7 +6,7 @@
 
 &{/chosen} {
 	overlays {
-		DEFAULT-CAPE-GATEWARE = "GATEWARE_GIT_VERSION";
+		4-UARTS-CAPE-GATEWARE = "GATEWARE_GIT_VERSION";
 	};
 };
 
