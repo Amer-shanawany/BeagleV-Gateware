@@ -94,13 +94,14 @@ set_io -port_name P9_28	\
     -pin_name C11	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -OUT_DRIVE 16        \
     -DIRECTION OUTPUT
 
 set_io -port_name P9_29	\
     -pin_name F17	\
     -fixed true	\
     -io_std LVCMOS33  \
-    -DIRECTION OUTPUT
+    -DIRECTION INPUT
 
 set_io -port_name P9_PIN30	\
     -pin_name F16	\
@@ -112,6 +113,7 @@ set_io -port_name P9_31	\
     -pin_name E18	\
     -fixed true	\
     -io_std LVCMOS33  \
+    -OUT_DRIVE 16        \
     -DIRECTION OUTPUT
 
 set_io -port_name P9_PIN41	\
