@@ -28,7 +28,7 @@
  				     <141>, <142>, <143>, <144>;
 
 			gpio-line-names = "P8_31", "P8_32", "", "P8_34",
-							  "", "P8_36", "P8_37", "P8_38",
+							  "", "SERVO_EN", "P8_37", "P8_38",
 							  "P8_39", "P8_40", "P8_41", "P8_42",
 							  "P8_43", "P8_44", "P8_45", "P8_46";
 		};
@@ -96,27 +96,15 @@
 			default-state = "on";
 		};
 
-		led_P8_07 {
+		LED_RED {
 			status = "okay";
 			gpios = <&gpio2 4 0>;
 			default-state = "off";
 		};
 
-		led_P8_08 {
+		LED_GREEN {
 			status = "okay";
 			gpios = <&gpio2 5 0>;
-			default-state = "off";
-		};
-
-		led_P8_09 {
-			status = "okay";
-			gpios = <&gpio2 6 0>;
-			default-state = "off";
-		};
-
-		led_P8_10 {
-			status = "okay";
-			gpios = <&gpio2 7 0>;
 			default-state = "off";
 		};
 
@@ -138,11 +126,64 @@
 			default-state = "off";
 		};
 
-		led_P8_14 {
+		LED_4 {
 			status = "okay";
 			gpios = <&gpio2 11 0>;
+			default-state = "off";
+		};
+
+		LED_1 {
+			status = "okay";
+			gpios = <&gpio2 14 0>;
+			default-state = "off";
+		};
+
+		LED_2 {
+			status = "okay";
+			gpios = <&gpio2 15 0>;
+			default-state = "off";
+		};
+
+		LED_3 {
+			status = "okay";
+			gpios = <&gpio2 23 0>;
 			default-state = "off";
 		};
 	};
 };
 
+&gpio2 {
+	interrupts = <53>, <53>, <53>, <53>,
+		     <53>, <53>, <53>, <53>,
+		     <53>, <53>, <53>, <53>,
+		     <53>, <53>, <53>, <53>,
+		     <53>, <53>, <53>, <53>,
+		     <53>, <53>, <53>, <53>,
+		     <53>, <53>, <53>, <53>,
+		     <53>, <53>, <53>, <53>;
+	gpio-line-names = "P8_3_USER_LED_0", "P8_4_USER_LED_1", "P8_5_USER_LED_2",
+					"P8_6_USER_LED_3", "P8_7_USER_LED_4", "P8_8_USER_LED_5",
+					"PAUSE_BTN", "MODE_BTN", "P8_11_USER_LED_8",
+					"P8_12_USER_LED_9", "", "",
+					"P8_15", "P8_16", "", "", "",
+					"P8_20", "P8_21", "P8_22",	"P8_23", "P8_24",
+					"P8_25", "", "P8_27", "P8_28", "P8_29",
+					"P8_30",
+					"M2_W_DISABLE1", "M2_W_DISABLE2",
+					"VIO_ENABLE", "SD_DET";
+	status = "okay";
+
+	vio_enable {
+		gpio-hog;
+		gpios = <30 30>;
+		output-high;
+		line-name = "VIO_ENABLE";
+	};
+
+	sd_det {
+		gpio-hog;
+		gpios = <31 31>;
+		input;
+		line-name = "SD_DET";
+	};
+};

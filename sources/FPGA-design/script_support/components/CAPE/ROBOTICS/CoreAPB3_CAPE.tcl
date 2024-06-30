@@ -4,7 +4,7 @@
 # Create and Configure the core component CoreAPB3_CAPE
 create_and_configure_core -core_vlnv {Actel:DirectCore:CoreAPB3:4.2.100} -component_name {CoreAPB3_CAPE} -params {\
 "APB_DWIDTH:32"  \
-"APBSLOT0ENABLE:false"  \
+"APBSLOT0ENABLE:true"  \
 "APBSLOT1ENABLE:true"  \
 "APBSLOT2ENABLE:true"  \
 "APBSLOT3ENABLE:true"  \

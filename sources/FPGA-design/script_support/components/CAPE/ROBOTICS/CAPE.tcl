@@ -9,6 +9,10 @@ auto_promote_pad_pins -promote_all 0
 sd_create_scalar_port -sd_name ${sd_name} -port_name {APB_SLAVE_SLAVE_PENABLE} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {APB_SLAVE_SLAVE_PSEL} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {APB_SLAVE_SLAVE_PWRITE} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_11} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_12} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_15} -port_direction {IN}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_16} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN33} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN35} -port_direction {IN}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN27} -port_direction {IN}
@@ -18,17 +22,21 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {PRESETN} -port_direction {
 
 sd_create_scalar_port -sd_name ${sd_name} -port_name {APB_SLAVE_SLAVE_PREADY} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {APB_SLAVE_SLAVE_PSLVERR} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_27} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_28} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_29} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_30} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_39} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_40} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_41} -port_direction {OUT}
+sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_42} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN13_USER_LED_10} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN19} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN14} -port_direction {OUT}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P9_PIN16} -port_direction {OUT}
 
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN10_USER_LED_7} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN11_USER_LED_8} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN12_USER_LED_9} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN14_USER_LED_11} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN15} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN16} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN17} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN18} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN20} -port_direction {INOUT} -port_is_pad {1}
@@ -38,21 +46,13 @@ sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN23} -port_direction 
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN24} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN25} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN26} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN27} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN28} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN29} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN30} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN31} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN32} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN34} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN36} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN37} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN38} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN39} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN3_USER_LED_0} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN40} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN41} -port_direction {INOUT} -port_is_pad {1}
-sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN42} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN43} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN44} -port_direction {INOUT} -port_is_pad {1}
 sd_create_scalar_port -sd_name ${sd_name} -port_name {P8_PIN45} -port_direction {INOUT} -port_is_pad {1}
@@ -137,6 +137,42 @@ sd_instantiate_component -sd_name ${sd_name} -component_name {CAPE_PWM} -instanc
 
 
 
+# Add servos_0 instance
+sd_instantiate_hdl_core -sd_name ${sd_name} -hdl_core_name {servos} -instance_name {servos_0}
+# Exporting Parameters of instance servos_0
+sd_configure_core_instance -sd_name ${sd_name} -instance_name {servos_0} -params {\
+"NB_OF_SERVOS:16" \
+"SERVO_VALUE_WIDTH:15" }\
+-validate_rules 0
+sd_save_core_instance_config -sd_name ${sd_name} -instance_name {servos_0}
+sd_update_instance -sd_name ${sd_name} -instance_name {servos_0}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[0:0]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[10:10]}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {servos_0:servos_out[10:10]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[11:11]}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {servos_0:servos_out[11:11]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[12:12]}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {servos_0:servos_out[12:12]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[13:13]}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {servos_0:servos_out[13:13]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[14:14]}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {servos_0:servos_out[14:14]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[15:15]}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {servos_0:servos_out[15:15]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[1:1]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[2:2]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[3:3]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[4:4]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[5:5]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[6:6]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[7:7]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[8:8]}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {servos_0:servos_out[8:8]}
+sd_create_pin_slices -sd_name ${sd_name} -pin_name {servos_0:servos_out} -pin_slices {[9:9]}
+sd_mark_pins_unused -sd_name ${sd_name} -pin_names {servos_0:servos_out[9:9]}
+
+
+
 # Add scalar net connections
 sd_create_scalar_net -sd_name ${sd_name} -net_name {P9_12}
 sd_create_scalar_net -sd_name ${sd_name} -net_name {P9_PIN15}
@@ -145,8 +181,6 @@ sd_connect_net_to_pins -sd_name ${sd_name} -net_name {P9_PIN15} -pin_names {"P9_
 
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_0_PAD" "P8_PIN3_USER_LED_0" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_11_PAD" "P8_PIN14_USER_LED_11" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_12_PAD" "P8_PIN15" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_13_PAD" "P8_PIN16" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_14_PAD" "P8_PIN17" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_15_PAD" "P8_PIN18" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_17_PAD" "P8_PIN20" }
@@ -157,21 +191,25 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_20_PAD"
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_21_PAD" "P8_PIN24" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_22_PAD" "P8_PIN25" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_23_PAD" "P8_PIN26" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_24_PAD" "P8_PIN27" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_25_PAD" "P8_PIN28" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_26_PAD" "P8_PIN29" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_27_PAD" "P8_PIN30" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_2_PAD" "P8_PIN5_USER_LED_2" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_3_PAD" "P8_PIN6_USER_LED_3" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_4_PAD" "P8_PIN7_USER_LED_4" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_5_PAD" "P8_PIN8_USER_LED_5" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_6_PAD" "P8_PIN9_USER_LED_6" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_7_PAD" "P8_PIN10_USER_LED_7" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_8_PAD" "P8_PIN11_USER_LED_8" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE_DEFAULT_GPIOS:GPIO_9_PAD" "P8_PIN12_USER_LED_9" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_11" "apb_rotary_enc_0:enc2_b" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_12" "apb_rotary_enc_0:enc2_a" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_15" "apb_rotary_enc_0:enc3_b" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_16" "apb_rotary_enc_0:enc3_a" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_27" "servos_0:servos_out[0:0]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_28" "servos_0:servos_out[1:1]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_29" "servos_0:servos_out[2:2]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_30" "servos_0:servos_out[3:3]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_39" "servos_0:servos_out[4:4]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_40" "servos_0:servos_out[5:5]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_41" "servos_0:servos_out[6:6]" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_42" "servos_0:servos_out[7:7]" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_0_PAD" "P8_PIN31" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_10_PAD" "P8_PIN41" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_11_PAD" "P8_PIN42" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_12_PAD" "P8_PIN43" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_13_PAD" "P8_PIN44" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_14_PAD" "P8_PIN45" }
@@ -181,10 +219,8 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_3_PAD" "P8
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_5_PAD" "P8_PIN36" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_6_PAD" "P8_PIN37" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_7_PAD" "P8_PIN38" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_8_PAD" "P8_PIN39" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:GPIO_9_PAD" "P8_PIN40" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PCLK" "P9_GPIO_0:PCLK" "PCLK" "PWM_0:PCLK" "PWM_1:PCLK" "apb_rotary_enc_0:pclk" }
-sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PRESETN" "P9_GPIO_0:PRESETN" "PRESETN" "PWM_0:PRESETN" "PWM_1:PRESETN" "apb_rotary_enc_0:presetn" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PCLK" "P9_GPIO_0:PCLK" "PCLK" "PWM_0:PCLK" "PWM_1:PCLK" "apb_rotary_enc_0:pclk" "servos_0:pclk" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_GPIO_UPPER_0:PRESETN" "P9_GPIO_0:PRESETN" "PRESETN" "PWM_0:PRESETN" "PWM_1:PRESETN" "apb_rotary_enc_0:presetn" "servos_0:presetn" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_PIN13_USER_LED_10" "PWM_1:PWM_1" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_PIN19" "PWM_1:PWM_0" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"P8_PIN33" "apb_rotary_enc_0:enc1_b" }
@@ -210,6 +246,7 @@ sd_connect_pins -sd_name ${sd_name} -pin_names {"INT_C" "P9_GPIO_0:INT" }
 # Add bus interface net connections
 sd_connect_pins -sd_name ${sd_name} -pin_names {"APB_BUS_CONVERTER_0:APB_MASTER" "CoreAPB3_CAPE_0:APB3mmaster" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"APB_BUS_CONVERTER_0:APB_SLAVE" "APB_SLAVE" }
+sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave0" "servos_0:APB_TARGET" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave1" "P8_GPIO_UPPER_0:APB_bif" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave2" "P9_GPIO_0:APB_bif" }
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CoreAPB3_CAPE_0:APBmslave3" "apb_rotary_enc_0:APB_TARGET" }

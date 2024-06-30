@@ -6,6 +6,7 @@ puts "======== Add cape option: ROBOTICS ========"
 import_files -hdl_source {script_support/components/CAPE/ROBOTICS/HDL/apb_rotary_enc.v}
 import_files -hdl_source {script_support/components/CAPE/ROBOTICS/HDL/debounce.v}
 import_files -hdl_source {script_support/components/CAPE/ROBOTICS/HDL/rotary_encoder.v}
+import_files -hdl_source {script_support/components/CAPE/ROBOTICS/HDL/servos.v}
 
 build_design_hierarchy
 create_hdl_core -file $project_dir/hdl/apb_rotary_enc.v -module {apb_rotary_enc} -library {work} -package {}
@@ -21,6 +22,20 @@ hdl_core_assign_bif_signal -hdl_core_name {apb_rotary_enc} -bif_name {BIF_1} -bi
 hdl_core_assign_bif_signal -hdl_core_name {apb_rotary_enc} -bif_name {BIF_1} -bif_signal_name {PSLVERR} -core_signal_name {pslverr} 
 hdl_core_assign_bif_signal -hdl_core_name {apb_rotary_enc} -bif_name {BIF_1} -bif_signal_name {PSELx} -core_signal_name {psel} 
 hdl_core_rename_bif -hdl_core_name {apb_rotary_enc} -current_bif_name {BIF_1} -new_bif_name {APB_TARGET} 
+
+create_hdl_core -file $project_dir/hdl/servos.v -module {servos} -library {work} -package {}
+
+hdl_core_add_bif -hdl_core_name {servos} -bif_definition {APB:AMBA:AMBA2:slave} -bif_name {BIF_1} -signal_map {} 
+hdl_core_assign_bif_signal -hdl_core_name {servos} -bif_name {BIF_1} -bif_signal_name {PADDR} -core_signal_name {paddr} 
+hdl_core_assign_bif_signal -hdl_core_name {servos} -bif_name {BIF_1} -bif_signal_name {PENABLE} -core_signal_name {penable} 
+hdl_core_assign_bif_signal -hdl_core_name {servos} -bif_name {BIF_1} -bif_signal_name {PWRITE} -core_signal_name {pwrite} 
+hdl_core_assign_bif_signal -hdl_core_name {servos} -bif_name {BIF_1} -bif_signal_name {PRDATA} -core_signal_name {prdata} 
+hdl_core_assign_bif_signal -hdl_core_name {servos} -bif_name {BIF_1} -bif_signal_name {PWDATA} -core_signal_name {pwdata} 
+#hdl_core_assign_bif_signal -hdl_core_name {servos} -bif_name {BIF_1} -bif_signal_name {PREADY} -core_signal_name {pready} 
+#hdl_core_assign_bif_signal -hdl_core_name {servos} -bif_name {BIF_1} -bif_signal_name {PSLVERR} -core_signal_name {pslverr} 
+hdl_core_assign_bif_signal -hdl_core_name {servos} -bif_name {BIF_1} -bif_signal_name {PSELx} -core_signal_name {psel} 
+hdl_core_rename_bif -hdl_core_name {servos} -current_bif_name {BIF_1} -new_bif_name {APB_TARGET} 
+
 
 #-------------------------------------------------------------------------------
 # Build cape's submodules
@@ -85,6 +100,21 @@ sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_PIN33} -port_name 
 sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P9_PIN42} -port_name {} 
 
 sd_connect_pins -sd_name ${sd_name} -pin_names {"CAPE:APB_SLAVE" "BVF_RISCV_SUBSYSTEM:CAPE_APB_MTARGET"}
+
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_11} -port_name {} 
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_12} -port_name {} 
+
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_15} -port_name {} 
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_16} -port_name {} 
+
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_42} -port_name {} 
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_27} -port_name {} 
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_28} -port_name {} 
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_29} -port_name {} 
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_30} -port_name {} 
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_39} -port_name {} 
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_40} -port_name {} 
+sd_connect_pin_to_port -sd_name ${sd_name} -pin_name {CAPE:P8_41} -port_name {} 
 
 sd_delete_ports -sd_name ${sd_name} -port_names {P9_13} 
 sd_mark_pins_unused -sd_name ${sd_name} -pin_names {BVF_RISCV_SUBSYSTEM:MMUART_4_TXD} 
