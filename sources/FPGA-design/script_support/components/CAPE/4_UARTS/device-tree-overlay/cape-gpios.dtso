@@ -24,7 +24,7 @@
 	};
 
 	cape_gpios_p8: gpio@41100000 {
-		compatible = "microchip,core-gpio";
+		compatible = "microchip,core-gpio","microchip,coregpio-rtl-v3";
 		reg = <0x0 0x41100000 0x0 0x1000>;
 		clocks = <&fabric_clk3>;
 		gpio-controller;
@@ -38,7 +38,7 @@
 	};
 
 	cape_gpios_p9: gpio@41200000 {
-		compatible = "microchip,core-gpio";
+		compatible = "microchip,core-gpio", "microchip,coregpio-rtl-v3";
 		reg = <0x0 0x41200000 0x0 0x1000>;
 		clocks = <&fabric_clk3>;
 		gpio-controller;

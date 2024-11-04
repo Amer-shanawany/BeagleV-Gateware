@@ -16,7 +16,7 @@
 	#size-cells = <2>;
 
 	m2_test_gpios: gpio@43000000 {
-		compatible = "microchip,core-gpio";
+		compatible = "microchip,core-gpio", "microchip,coregpio-rtl-v3";
 		reg = <0x0 0x43000000 0x0 0x1000>;
 		clocks = <&fabric_clk3>;
 		gpio-controller;

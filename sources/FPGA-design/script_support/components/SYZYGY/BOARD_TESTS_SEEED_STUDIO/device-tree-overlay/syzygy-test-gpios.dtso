@@ -15,7 +15,7 @@
 	#size-cells = <2>;
 
 	hsi_gpios: gpio@44000000 {
-		compatible = "microchip,core-gpio";
+		compatible = "microchip,core-gpio", "microchip,coregpio-rtl-v3";
 		reg = <0x0 0x44000000 0x0 0x1000>;
 		clocks = <&fabric_clk3>;
 		gpio-controller;
