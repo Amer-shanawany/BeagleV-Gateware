@@ -27,12 +27,12 @@
 			clocks = <&fabric_clk3>;
 			gpio-controller;
 			#gpio-cells = <2>;
-			ngpios=<16>;
+			ngpios = <16>;
 			status = "okay";
 			gpio-line-names = "P8_31", "P8_32", "P8_33", "P8_34",
-			                  "P8_35", "P8_36", "P8_37", "P8_38",
-			                  "P8_39", "P8_40", "P8_41", "P8_42",
-			                  "P8_43", "P8_44", "P8_45", "P8_46";
+					  "P8_35", "P8_36", "P8_37", "P8_38",
+					  "P8_39", "P8_40", "P8_41", "P8_42",
+					  "P8_43", "P8_44", "P8_45", "P8_46";
 		};
 
 		cape_gpios_p9: gpio@41200000 {
@@ -41,13 +41,13 @@
 			clocks = <&fabric_clk3>;
 			gpio-controller;
 			#gpio-cells = <2>;
-			ngpios=<21>;
+			ngpios = <21>;
 			status = "okay";
 			gpio-line-names = "", "P9_12", "", "", "P9_15",
-			                  "", "", "", "", "",
-			                  "P9_23", "", "P9_25", "", "P9_27",
-			                  "", "", "P9_30", "", "P9_41",
-			                  "";
+					  "", "", "", "", "",
+					  "P9_23", "", "P9_25", "", "P9_27",
+					  "", "", "P9_30", "", "P9_41",
+					  "";
 		};
 
 		bone_pwm_1: pwm@41400000 {
@@ -55,7 +55,7 @@
 			reg = <0x0 0x41400000 0x0 0xF0>;
 			microchip,sync-update-mask = /bits/ 32 <0>;
 			#pwm-cells = <3>;
-            status = "okay";
+			status = "okay";
 			clocks = <&fabric_clk3>;
 		};
 
@@ -64,7 +64,7 @@
 			reg = <0x0 0x41500000 0x0 0xF0>;
 			microchip,sync-update-mask = /bits/ 32 <0>;
 			#pwm-cells = <3>;
-            status = "okay";
+			status = "okay";
 			clocks = <&fabric_clk3>;
 		};
 	};
