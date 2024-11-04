@@ -10,75 +10,68 @@
 	};
 };
 
-&{/} {
-	fabric-bus@40000000 {
-		core_pwm0: pwm@41000000 {
-			compatible = "microchip,corepwm-rtl-v4";
-			reg = <0x0 0x41000000 0x0 0xF0>;
-			microchip,sync-update-mask = /bits/ 32 <0>;
-			#pwm-cells = <3>;
-			clocks = <&fabric_clk3>;
-			status = "okay";
-		};
+&{/fabric-bus@40000000} {
+	#address-cells = <2>;
+	#size-cells = <2>;
 
-		cape_gpios_p8: gpio@41100000 {
-			compatible = "microchip,core-gpio";
-			reg = <0x0 0x41100000 0x0 0x1000>;
-			clocks = <&fabric_clk3>;
-			gpio-controller;
-			#gpio-cells = <2>;
-			ngpios = <16>;
-			status = "okay";
-			gpio-line-names = "P8_31", "P8_32", "P8_33", "P8_34",
-					  "P8_35", "P8_36", "P8_37", "P8_38",
-					  "P8_39", "P8_40", "P8_41", "P8_42",
-					  "P8_43", "P8_44", "P8_45", "P8_46";
-		};
+	core_pwm0: pwm@41000000 {
+		compatible = "microchip,corepwm-rtl-v4";
+		reg = <0x0 0x41000000 0x0 0xF0>;
+		microchip,sync-update-mask = /bits/ 32 <0>;
+		#pwm-cells = <3>;
+		clocks = <&fabric_clk3>;
+		status = "okay";
+	};
 
-		cape_gpios_p9: gpio@41200000 {
-			compatible = "microchip,core-gpio";
-			reg = <0x0 0x41200000 0x0 0x1000>;
-			clocks = <&fabric_clk3>;
-			gpio-controller;
-			#gpio-cells = <2>;
-			ngpios = <21>;
-			status = "okay";
-			gpio-line-names = "", "P9_12", "", "", "P9_15",
-					  "", "", "", "", "",
-					  "P9_23", "", "P9_25", "", "P9_27",
-					  "", "", "P9_30", "", "P9_41",
-					  "";
-		};
+	cape_gpios_p8: gpio@41100000 {
+		compatible = "microchip,core-gpio";
+		reg = <0x0 0x41100000 0x0 0x1000>;
+		clocks = <&fabric_clk3>;
+		gpio-controller;
+		#gpio-cells = <2>;
+		ngpios = <16>;
+		status = "okay";
+		gpio-line-names = "P8_31", "P8_32", "P8_33", "P8_34",
+				  "P8_35", "P8_36", "P8_37", "P8_38",
+				  "P8_39", "P8_40", "P8_41", "P8_42",
+				  "P8_43", "P8_44", "P8_45", "P8_46";
+	};
 
-		bone_pwm_1: pwm@41400000 {
-			compatible = "microchip,corepwm-rtl-v4";
-			reg = <0x0 0x41400000 0x0 0xF0>;
-			microchip,sync-update-mask = /bits/ 32 <0>;
-			#pwm-cells = <3>;
-			status = "okay";
-			clocks = <&fabric_clk3>;
-		};
+	cape_gpios_p9: gpio@41200000 {
+		compatible = "microchip,core-gpio";
+		reg = <0x0 0x41200000 0x0 0x1000>;
+		clocks = <&fabric_clk3>;
+		gpio-controller;
+		#gpio-cells = <2>;
+		ngpios = <21>;
+		status = "okay";
+		gpio-line-names = "", "P9_12", "", "", "P9_15",
+				  "", "", "", "", "",
+				  "P9_23", "", "P9_25", "", "P9_27",
+				  "", "", "P9_30", "", "P9_41",
+				  "";
+	};
 
-		bone_pwm_2: pwm@41500000 {
-			compatible = "microchip,corepwm-rtl-v4";
-			reg = <0x0 0x41500000 0x0 0xF0>;
-			microchip,sync-update-mask = /bits/ 32 <0>;
-			#pwm-cells = <3>;
-			status = "okay";
-			clocks = <&fabric_clk3>;
-		};
+	bone_pwm_1: pwm@41400000 {
+		compatible = "microchip,corepwm-rtl-v4";
+		reg = <0x0 0x41400000 0x0 0xF0>;
+		microchip,sync-update-mask = /bits/ 32 <0>;
+		#pwm-cells = <3>;
+		status = "okay";
+		clocks = <&fabric_clk3>;
+	};
+
+	bone_pwm_2: pwm@41500000 {
+		compatible = "microchip,corepwm-rtl-v4";
+		reg = <0x0 0x41500000 0x0 0xF0>;
+		microchip,sync-update-mask = /bits/ 32 <0>;
+		#pwm-cells = <3>;
+		status = "okay";
+		clocks = <&fabric_clk3>;
 	};
 };
 
 &gpio2 {
-	interrupts = <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>;
 	gpio-line-names = "P8_3_USER_LED_0", "P8_4_USER_LED_1", "P8_5_USER_LED_2",
 					"P8_6_USER_LED_3", "P8_7_USER_LED_4", "P8_8_USER_LED_5",
 					"P8_9_USER_LED_6", "P8_10_USER_LED_7", "P8_11_USER_LED_8",
@@ -89,21 +82,6 @@
 					"P8_30",
 					"M2_W_DISABLE1", "M2_W_DISABLE2",
 					"VIO_ENABLE", "SD_DET";
-	status = "okay";
-
-	vio_enable {
-		gpio-hog;
-		gpios = <30 30>;
-		output-high;
-		line-name = "VIO_ENABLE";
-	};
-
-	sd_det {
-		gpio-hog;
-		gpios = <31 31>;
-		input;
-		line-name = "SD_DET";
-	};
 };
 
 &mmuart2 {
@@ -122,6 +100,8 @@
 };
 
 &spi1 {
+	#address-cells = <1>;
+	#size-cells = <0>;
 	status = "okay";
 	symlink = "bone/spi/1";
 	num-cs = <1>;

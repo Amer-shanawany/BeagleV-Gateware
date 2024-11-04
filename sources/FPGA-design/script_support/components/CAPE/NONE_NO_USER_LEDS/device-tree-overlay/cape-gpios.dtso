@@ -11,14 +11,6 @@
 };
 
 &gpio2 {
-	interrupts = <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>,
-		     <53>, <53>, <53>, <53>;
 	gpio-line-names = "", "", "",
 			  "", "", "",
 			  "", "", "",
@@ -29,21 +21,6 @@
 			  "",
 			  "M2_W_DISABLE1", "M2_W_DISABLE2",
 			  "VIO_ENABLE", "SD_DET";
-	status = "okay";
-
-	vio_enable {
-		gpio-hog;
-		gpios = <30 30>;
-		output-high;
-		line-name = "VIO_ENABLE";
-	};
-
-	sd_det {
-		gpio-hog;
-		gpios = <31 31>;
-		input;
-		line-name = "SD_DET";
-	};
 };
 
 &mmuart4 {
