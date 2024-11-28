@@ -1,7 +1,7 @@
 puts "======== Add MIPI CSI option: IO_BOARD_VALIDATION ========"
 
-source script_support/components/MIPI_CSI/IO_BOARD_VALIDATION/CSI_TEST_PWM.tcl
-source script_support/components/MIPI_CSI/IO_BOARD_VALIDATION/MIPI_CSI_INTERFACE.tcl
+::safe_source script_support/components/MIPI_CSI/IO_BOARD_VALIDATION/CSI_TEST_PWM.tcl
+::safe_source script_support/components/MIPI_CSI/IO_BOARD_VALIDATION/MIPI_CSI_INTERFACE.tcl
 
 set sd_name ${top_level_name}
 

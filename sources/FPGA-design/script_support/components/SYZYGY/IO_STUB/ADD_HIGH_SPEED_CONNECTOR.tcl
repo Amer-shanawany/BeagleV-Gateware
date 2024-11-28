@@ -2,17 +2,17 @@
 puts "======== Add High Speed Connector option: IO_STUB ========"
 
 
-source script_support/components/SYZYGY/IO_STUB/PF_IO_C0.tcl
-source script_support/components/SYZYGY/IO_STUB/PF_IO_C1.tcl
-source script_support/components/SYZYGY/IO_STUB/PF_IO_C2.tcl
-source script_support/components/SYZYGY/IO_STUB/PF_IO_C3.tcl
-source script_support/components/SYZYGY/IO_STUB/PF_IO_C4.tcl
-source script_support/components/SYZYGY/IO_STUB/PF_IO_C5.tcl
-source script_support/components/SYZYGY/IO_STUB/PF_TX_PLL_C0.tcl
-source script_support/components/SYZYGY/IO_STUB/PF_XCVR_ERM_C0.tcl
-source script_support/components/SYZYGY/IO_STUB/PF_XCVR_ERM_C1.tcl
-source script_support/components/SYZYGY/IO_STUB/PF_XCVR_REF_CLK_C0.tcl
-source script_support/components/SYZYGY/IO_STUB/HIGH_SPEED_CONNECTOR.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_IO_C0.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_IO_C1.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_IO_C2.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_IO_C3.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_IO_C4.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_IO_C5.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_TX_PLL_C0.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_XCVR_ERM_C0.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_XCVR_ERM_C1.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/PF_XCVR_REF_CLK_C0.tcl
+::safe_source script_support/components/SYZYGY/IO_STUB/HIGH_SPEED_CONNECTOR.tcl
 
 set sd_name ${top_level_name}
 

@@ -1,4 +1,4 @@
-#source script_support/components/BVF_RISCV_SUBSYSTEM/USER_LED_GPIO.tcl
+#::safe_source script_support/components/BVF_RISCV_SUBSYSTEM/USER_LED_GPIO.tcl
 
 # Creating SmartDesign BVF_RISCV_SUBSYSTEM
 set sd_name {BVF_RISCV_SUBSYSTEM}

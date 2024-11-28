@@ -3,16 +3,16 @@ puts "======== Add cape option: 4_UARTS ========"
 #-------------------------------------------------------------------------------
 # Build cape's submodules
 #-------------------------------------------------------------------------------
-source script_support/components/CAPE/4_UARTS/APB_BUS_CONVERTER.tcl
-source script_support/components/CAPE/4_UARTS/CoreAPB3_CAPE.tcl
-source script_support/components/CAPE/4_UARTS/CoreGPIO_LCD.tcl
-source script_support/components/CAPE/4_UARTS/P8_GPIO_UPPER.tcl
-source script_support/components/CAPE/4_UARTS/CoreGPIO_P9.tcl
-source script_support/components/CAPE/4_UARTS/P9_GPIO.tcl
-source script_support/components/CAPE/4_UARTS/CAPE_DEFAULT_GPIOS.tcl
-source script_support/components/CAPE/4_UARTS/corepwm_C1.tcl
-source script_support/components/CAPE/4_UARTS/CAPE_PWM.tcl
-source script_support/components/CAPE/4_UARTS/CAPE.tcl
+::safe_source script_support/components/CAPE/4_UARTS/APB_BUS_CONVERTER.tcl
+::safe_source script_support/components/CAPE/4_UARTS/CoreAPB3_CAPE.tcl
+::safe_source script_support/components/CAPE/4_UARTS/CoreGPIO_LCD.tcl
+::safe_source script_support/components/CAPE/4_UARTS/P8_GPIO_UPPER.tcl
+::safe_source script_support/components/CAPE/4_UARTS/CoreGPIO_P9.tcl
+::safe_source script_support/components/CAPE/4_UARTS/P9_GPIO.tcl
+::safe_source script_support/components/CAPE/4_UARTS/CAPE_DEFAULT_GPIOS.tcl
+::safe_source script_support/components/CAPE/4_UARTS/corepwm_C1.tcl
+::safe_source script_support/components/CAPE/4_UARTS/CAPE_PWM.tcl
+::safe_source script_support/components/CAPE/4_UARTS/CAPE.tcl
 
 #-------------------------------------------------------------------------------
 # Build the Cape module

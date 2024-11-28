@@ -3,14 +3,14 @@ puts "======== Add cape option: GPIOS ========"
 #-------------------------------------------------------------------------------
 # Build cape's submodules
 #-------------------------------------------------------------------------------
-source script_support/components/CAPE/GPIOS/APB_BUS_CONVERTER.tcl
-source script_support/components/CAPE/DEFAULT/CoreAPB3_CAPE.tcl
-source script_support/components/CAPE/GPIOS/CoreGPIO_LCD.tcl
-source script_support/components/CAPE/GPIOS/P8_GPIO_UPPER.tcl
-source script_support/components/CAPE/GPIOS/CoreGPIO_P9.tcl
-source script_support/components/CAPE/GPIOS/P9_GPIO.tcl
-source script_support/components/CAPE/GPIOS/CAPE_DEFAULT_GPIOS.tcl
-source script_support/components/CAPE/GPIOS/CAPE.tcl
+::safe_source script_support/components/CAPE/GPIOS/APB_BUS_CONVERTER.tcl
+::safe_source script_support/components/CAPE/DEFAULT/CoreAPB3_CAPE.tcl
+::safe_source script_support/components/CAPE/GPIOS/CoreGPIO_LCD.tcl
+::safe_source script_support/components/CAPE/GPIOS/P8_GPIO_UPPER.tcl
+::safe_source script_support/components/CAPE/GPIOS/CoreGPIO_P9.tcl
+::safe_source script_support/components/CAPE/GPIOS/P9_GPIO.tcl
+::safe_source script_support/components/CAPE/GPIOS/CAPE_DEFAULT_GPIOS.tcl
+::safe_source script_support/components/CAPE/GPIOS/CAPE.tcl
 
 #-------------------------------------------------------------------------------
 # Build the Cape module

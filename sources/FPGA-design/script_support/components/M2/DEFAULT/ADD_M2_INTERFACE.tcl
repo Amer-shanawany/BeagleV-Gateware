@@ -1,17 +1,17 @@
 puts "======== Add M.2 option: DEFAULT ========"
 
 
-source script_support/components/M2/DEFAULT/PCIE_INITIATOR.tcl 
-source script_support/components/M2/DEFAULT/RECONFIGURATION_INTERFACE.tcl 
-source script_support/components/M2/DEFAULT/PF_PCIE_C0.tcl 
-source script_support/components/FIC_1_INITIATOR.tcl 
-source script_support/components/M2/DEFAULT/M2_INTERFACE.tcl
+::safe_source script_support/components/M2/DEFAULT/PCIE_INITIATOR.tcl 
+::safe_source script_support/components/M2/DEFAULT/RECONFIGURATION_INTERFACE.tcl 
+::safe_source script_support/components/M2/DEFAULT/PF_PCIE_C0.tcl 
+::safe_source script_support/components/FIC_1_INITIATOR.tcl 
+::safe_source script_support/components/M2/DEFAULT/M2_INTERFACE.tcl
 
 #-------------------------------------------------------------------------------
 # Modify the CLOCKS_AND_RESET block to add the required PCIe clocks generation.
 #-------------------------------------------------------------------------------
 
-source script_support/components/CLOCKS_AND_RESETS/ADD_PCIE_CLOCKS_AND_RESETS.tcl 
+::safe_source script_support/components/CLOCKS_AND_RESETS/ADD_PCIE_CLOCKS_AND_RESETS.tcl 
 sd_update_instance -sd_name ${top_level_name} -instance_name {CLOCKS_AND_RESETS}
 
 #-------------------------------------------------------------------------------

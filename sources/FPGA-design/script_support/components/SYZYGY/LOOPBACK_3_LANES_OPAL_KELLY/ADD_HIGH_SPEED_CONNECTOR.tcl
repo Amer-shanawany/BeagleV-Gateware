@@ -14,23 +14,23 @@ create_hdl_core -file $project_dir/hdl/pattern_chk.v -module {PATTERN_CHK} -libr
 create_hdl_core -file $project_dir/hdl/pattern_gen.v -module {PATTERN_GEN} -library {work} -package {}
 
 
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_CLK_DIV_C0.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_TX_PLL_0.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_CCC_C0.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_XCVR_0.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_XCVR_REF_CLK_0.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/Reset_sync_rx.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/Reset_sync_tx.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/Reset_Block.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/XCVR_LOOPBACK.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_CLK_DIV_C0.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_TX_PLL_0.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_CCC_C0.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_XCVR_0.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/PF_XCVR_REF_CLK_0.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/Reset_sync_rx.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/Reset_sync_tx.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/Reset_Block.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/XCVR_LOOPBACK/XCVR_LOOPBACK.tcl
 
 
 
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/PF_CCC_C1.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/PF_XCVR_REF_CLK_C0.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/PF_TX_PLL_XCVR1.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/HSIO_CoreGPIO_C0.tcl
-source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/HIGH_SPEED_INTERFACE.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/PF_CCC_C1.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/PF_XCVR_REF_CLK_C0.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/PF_TX_PLL_XCVR1.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/HSIO_CoreGPIO_C0.tcl
+::safe_source script_support/components/SYZYGY/LOOPBACK_3_LANES_OPAL_KELLY/HIGH_SPEED_INTERFACE.tcl
 
 
 

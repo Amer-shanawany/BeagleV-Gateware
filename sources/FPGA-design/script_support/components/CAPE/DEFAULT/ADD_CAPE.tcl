@@ -3,17 +3,17 @@ puts "======== Add cape option: DEFAULT ========"
 #-------------------------------------------------------------------------------
 # Build cape's submodules
 #-------------------------------------------------------------------------------
-source script_support/components/CAPE/DEFAULT/APB_BUS_CONVERTER.tcl
-source script_support/components/CAPE/DEFAULT/CoreAPB3_CAPE.tcl
-source script_support/components/CAPE/DEFAULT/CoreGPIO_LCD.tcl
-#source script_support/components/CAPE/DEFAULT/P8_GPIO_LCD.tcl
-source script_support/components/CAPE/DEFAULT/P8_GPIO_UPPER.tcl
-source script_support/components/CAPE/DEFAULT/CoreGPIO_P9.tcl
-source script_support/components/CAPE/DEFAULT/P9_GPIO.tcl
-source script_support/components/CAPE/DEFAULT/CAPE_DEFAULT_GPIOS.tcl
-source script_support/components/CAPE/DEFAULT/corepwm_C1.tcl
-source script_support/components/CAPE/DEFAULT/CAPE_PWM.tcl
-source script_support/components/CAPE/DEFAULT/CAPE.tcl
+::safe_source script_support/components/CAPE/DEFAULT/APB_BUS_CONVERTER.tcl
+::safe_source script_support/components/CAPE/DEFAULT/CoreAPB3_CAPE.tcl
+::safe_source script_support/components/CAPE/DEFAULT/CoreGPIO_LCD.tcl
+#::safe_source script_support/components/CAPE/DEFAULT/P8_GPIO_LCD.tcl
+::safe_source script_support/components/CAPE/DEFAULT/P8_GPIO_UPPER.tcl
+::safe_source script_support/components/CAPE/DEFAULT/CoreGPIO_P9.tcl
+::safe_source script_support/components/CAPE/DEFAULT/P9_GPIO.tcl
+::safe_source script_support/components/CAPE/DEFAULT/CAPE_DEFAULT_GPIOS.tcl
+::safe_source script_support/components/CAPE/DEFAULT/corepwm_C1.tcl
+::safe_source script_support/components/CAPE/DEFAULT/CAPE_PWM.tcl
+::safe_source script_support/components/CAPE/DEFAULT/CAPE.tcl
 
 #-------------------------------------------------------------------------------
 # Build the Cape module

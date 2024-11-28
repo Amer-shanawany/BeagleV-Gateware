@@ -1,7 +1,7 @@
 #-------------------------------------------------------------------------------
 # Build the Cape module
 #-------------------------------------------------------------------------------
-source script_support/components/CAPE/DEFAULT/ADD_CAPE.tcl
+::safe_source script_support/components/CAPE/DEFAULT/ADD_CAPE.tcl
 puts "======== Add cape option: COMMS_CAPE ========"
 set sd_name ${top_level_name}
 

@@ -1,8 +1,8 @@
 puts "======== Add M.2 option: BOARD_TESTS ========"
 
-source script_support/components/M2/BOARD_TESTS/CoreGPIO_M2.tcl
+::safe_source script_support/components/M2/BOARD_TESTS/CoreGPIO_M2.tcl
 
-source script_support/components/M2/BOARD_TESTS/M2_INTERFACE.tcl
+::safe_source script_support/components/M2/BOARD_TESTS/M2_INTERFACE.tcl
 
 #-------------------------------------------------------------------------------
 # Create the M.2 interface block.

@@ -201,7 +201,7 @@ download_core -vlnv {Microchip:SolutionCore:mipicsi2rxdecoderPF:4.7.0} -location
 # // Generate base design
 #
 
-source ./script_support/B_V_F_recursive.tcl
+safe_source ./script_support/B_V_F_recursive.tcl
 
 #
 # // Import I/O constraints
@@ -279,12 +279,12 @@ if !{[info exists ONLY_CREATE_DESIGN]} {
         create_eNVM_config "$local_dir/script_support/components/MSS/ENVM.cfg" "$HSS_IMAGE_PATH"
         run_tool -name {GENERATEPROGRAMMINGDATA}
         configure_envm -cfg_file {script_support/components/MSS/ENVM.cfg}
-        source ./script_support/export_spi_prog_file.tcl
+        safe_source ./script_support/export_spi_prog_file.tcl
        configure_spiflash -cfg_file {./script_support/spiflash.cfg} 
         run_tool -name {GENERATEPROGRAMMINGFILE} 
 #       run_tool -name {GENERATE_SPI_FLASH_IMAGE} 
-        source ./script_support/export_flashproexpress.tcl
-        source ./script_support/export_directc.tcl
+        safe_source ./script_support/export_flashproexpress.tcl
+        safe_source ./script_support/export_directc.tcl
     } else {
         run_tool -name {GENERATEPROGRAMMINGDATA}
         puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"

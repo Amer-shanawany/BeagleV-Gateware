@@ -2,16 +2,16 @@ puts "======== Add MIPI CSI option: IMX219_PHY_TEST ========"
 
 auto_promote_pad_pins -promote_all 1
 
-source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CAM_IOD_TIP_TOP/PF_IOD_GENERIC_RX_C0.tcl
-source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CAM_IOD_TIP_TOP/CORERESET_PF_C1.tcl
-source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CAM_IOD_TIP_TOP/CORERXIODBITALIGN_C1.tcl
-source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CAM_IOD_TIP_TOP/CAM_IOD_TIP_TOP.tcl
+::safe_source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CAM_IOD_TIP_TOP/PF_IOD_GENERIC_RX_C0.tcl
+::safe_source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CAM_IOD_TIP_TOP/CORERESET_PF_C1.tcl
+::safe_source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CAM_IOD_TIP_TOP/CORERXIODBITALIGN_C1.tcl
+::safe_source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CAM_IOD_TIP_TOP/CAM_IOD_TIP_TOP.tcl
 
-source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CORERESET_PF_C2.tcl
-source script_support/components/MIPI_CSI/IMX219_PHY_TEST/PF_CCC_C2.tcl
-source script_support/components/MIPI_CSI/IMX219_PHY_TEST/mipicsi2rxdecoderPF_C0.tcl
-source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CoreGPIO_MIPI_CSI.tcl
-source script_support/components/MIPI_CSI/IMX219_PHY_TEST/IMX219_IF_TOP.tcl
+::safe_source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CORERESET_PF_C2.tcl
+::safe_source script_support/components/MIPI_CSI/IMX219_PHY_TEST/PF_CCC_C2.tcl
+::safe_source script_support/components/MIPI_CSI/IMX219_PHY_TEST/mipicsi2rxdecoderPF_C0.tcl
+::safe_source script_support/components/MIPI_CSI/IMX219_PHY_TEST/CoreGPIO_MIPI_CSI.tcl
+::safe_source script_support/components/MIPI_CSI/IMX219_PHY_TEST/IMX219_IF_TOP.tcl
 
 
 set sd_name ${top_level_name}
