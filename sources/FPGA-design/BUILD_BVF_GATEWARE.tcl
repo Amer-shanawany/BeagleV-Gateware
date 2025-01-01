@@ -169,6 +169,7 @@ new_project \
     -adv_options {VCCI_3.3_VOLTR:EXT} \
     -adv_options {VOLTR:EXT}
 
+
 #
 # // Download required cores
 #
@@ -200,13 +201,18 @@ download_core -vlnv {Microchip:SolutionCore:mipicsi2rxdecoderPF:4.7.0} -location
 #
 # // Generate base design
 #
-
 safe_source ./script_support/B_V_F_recursive.tcl
+
+#
+# // Ensure no open-ended AXI4 BIF
+#
+if {[info exists AXI_STOP_CAP]} {
+    safe_source ./script_support/axi_stop_cap.tcl
+}
 
 #
 # // Import I/O constraints
 #
-
 set import_pdc_files "-io_pdc \"./constraints/base_design.pdc\""
 set place_route_pdc_files "-file \"${project_dir}/constraint/io/base_design.pdc\""
 
