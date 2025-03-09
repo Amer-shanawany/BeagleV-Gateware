@@ -255,6 +255,7 @@ def clone_sources(source_list):
                 if os.path.exists(os.path.join("./sources", source)):
                     repo = git.Repo.init(os.path.join("./sources", source))  # set up repo
                     repo.git.checkout(data.get(source).get("branch"))  # checkout the branch from the yaml file
+                    repo.git.reset('--hard', data.get(source).get("commit"))
                     repo.remotes.origin.pull()  # pull changes
 
                 # We don't already have the repo, clone it
