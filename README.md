@@ -26,6 +26,9 @@ The following environment variables are required for the bitstream builder to us
 
 An example script for setting up the environment is available [here](https://openbeagle.org/beaglev-fire/Microchip-FPGA-Tools-Setup). 
 
+### Ubuntu 24.04.x
+Check this [guide](https://gist.github.com/LucienMorey/2b923e661790a866f6db4dd2a95958ed) for setting up the tools on Ubuntu 24.04.x.
+
 ## Usage
 
 ```
